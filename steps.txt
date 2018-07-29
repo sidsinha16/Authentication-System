@@ -1,0 +1,14 @@
+1.install ejs express route and body parser
+2.create view and link it in app
+3.create route and link it in app
+4.make view and use css
+5.install passport and google auth stragtegy [see packet.json]
+6.setup google api account  : https://console.developers.google.com/
+7. then create a config  : google-auth-js page and separe the keys in separate js page.
+8. then In auth-route.js, User staetegy and link the google-auth in app.js
+9.setup redirect url
+10.Use redirect call for passport : /auth/google/redirect and use callback in passport strat : accessToken,refreshToken,profile,done
+11.make account in mlab and make database and then establish a connection in apps
+12.make schema and link it with google-auth to save its data
+13.save data in database and check whether user is existed or not. f yes, then no data is being saved in database
+14the use serialzer and deserializer to save cookie in browser
