@@ -23,4 +23,15 @@ router.get('/google/redirect',passport.authenticate('google'),(req,res)=>{
 	res.send("Logged In");
 })
 
+//auth with facebook
+router.get('/facebook',passport.authenticate('facebook'));
+
+router.get('/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login' }),
+  function(req, res) {
+    res.redirect('/');
+  })
+
+
+
+
 module.exports=router;

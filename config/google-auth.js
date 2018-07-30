@@ -23,8 +23,6 @@ passport.use(new GoogleStrategy({
 },(accessToken,refreshToken,profile,done)=>{
 	console.log(profile.displayName);
 	console.log(profile.gender);
-	console.log(profile.id);
-
 	User.findOne({googleId : profile.id}).then((user) => {
 		if(user){
 			console.log("User is " + user.username)
@@ -33,7 +31,8 @@ passport.use(new GoogleStrategy({
 			new User({
 				username : profile.displayName,
 				gender : profile.gender,
-				googleId : profile.id
+				id : profile.id,
+				medium : profile.provider
 			}).save().then((data) => {
 				console.log("New User => Name :: " + data.username+" is created");
 				done(null,data);

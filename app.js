@@ -1,6 +1,7 @@
 const express = require('express'),
 	  authRoute = require('./routes/auth-route'),
-	  passportSetup = require('./config/google-auth'),
+	  gPassportSetup = require('./config/google-auth'),
+	  fPassportSetup = require('./config/facebook-auth'),
 	  keys = require('./config/keys'),
 	  mongoose = require('mongoose'),
 	  cookieSession = require('cookie-session'),
@@ -22,6 +23,7 @@ app.use(cookieSession({
     maxAge: 24 * 60 * 60 * 1000,
     keys: [keys.session.cookieKey]
 }));
+
 
 //initailize passport
 app.use(passport.initialize());
